@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
+import styles from "./index.module.css"
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -6,8 +7,22 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div>
-      <h3>Welcome Home!</h3>
+    <div className={styles.container}>
+      <h1>Welcome visitor!</h1>
+
+      <p>
+        List of challenges provided by{" "}
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        .
+      </p>
+
+      <ol>
+        <li>
+          <Link to="/qr-code-component">QR code component</Link>
+        </li>
+      </ol>
     </div>
   )
 }

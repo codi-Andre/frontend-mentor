@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
 
 // Create/Update Routes
 
@@ -20,6 +21,13 @@ const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const gettingStartedQrCodeComponentRoute =
+  gettingStartedQrCodeComponentImport.update({
+    id: '/(getting-started)/qr-code-component',
+    path: '/qr-code-component',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -32,6 +40,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/(getting-started)/qr-code-component': {
+      id: '/(getting-started)/qr-code-component'
+      path: '/qr-code-component'
+      fullPath: '/qr-code-component'
+      preLoaderRoute: typeof gettingStartedQrCodeComponentImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -39,32 +54,37 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/qr-code-component'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/qr-code-component'
+  id: '__root__' | '/' | '/(getting-started)/qr-code-component'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  gettingStartedQrCodeComponentRoute: gettingStartedQrCodeComponentRoute,
 }
 
 export const routeTree = rootRoute
@@ -77,11 +97,15 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/",
+        "/(getting-started)/qr-code-component"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/(getting-started)/qr-code-component": {
+      "filePath": "(getting-started)/qr-code-component.tsx"
     }
   }
 }

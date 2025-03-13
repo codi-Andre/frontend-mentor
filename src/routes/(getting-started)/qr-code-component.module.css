@@ -1,0 +1,66 @@
+@font-face {
+  font-display: swap;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/outfit-v11-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/outfit-v11-latin-700.woff2") format("woff2");
+}
+
+.container {
+  --slate-300: hsl(212, 45%, 89%);
+  --slate-500: hsl(216, 15%, 48%);
+  --slate-900: hsl(218, 44%, 22%);
+
+  min-height: 100vh;
+  min-width: 320px;
+
+  background-color: var(--slate-300);
+  color: var(--slate-500);
+
+  display: flex;
+  align-items: center;
+
+  font-family: "Outfit";
+  font-weight: 400;
+  line-height: 1.312rem;
+}
+
+.card {
+  height: 499px;
+  width: 320px;
+
+  background-color: white;
+  box-shadow: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
+
+  border-radius: 20px;
+  padding: 16px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.image {
+  border-radius: 10px;
+  margin-inline: auto;
+}
+
+.title {
+  color: var(--slate-900);
+
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.65rem;
+}
+
+.description {
+  margin-inline: auto;
+  max-width: 25ch;
+}
