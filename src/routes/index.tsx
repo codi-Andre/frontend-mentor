@@ -26,6 +26,10 @@ function Index() {
         <li>
           <Link to="/blog-preview-card">Blog preview card</Link>
         </li>
+
+        <li>
+          <Link to="/social-links-profile">Social links profile</Link>
+        </li>
       </ol>
     </div>
   )

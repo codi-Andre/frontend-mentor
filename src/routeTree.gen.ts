@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getting-started)/social-links-profile'
 import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
 import { Route as gettingStartedBlogPreviewCardImport } from './routes/(getting-started)/blog-preview-card'
 
@@ -22,6 +23,13 @@ const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const gettingStartedSocialLinksProfileRoute =
+  gettingStartedSocialLinksProfileImport.update({
+    id: '/(getting-started)/social-links-profile',
+    path: '/social-links-profile',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const gettingStartedQrCodeComponentRoute =
   gettingStartedQrCodeComponentImport.update({
@@ -62,6 +70,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof gettingStartedQrCodeComponentImport
       parentRoute: typeof rootRoute
     }
+    '/(getting-started)/social-links-profile': {
+      id: '/(getting-started)/social-links-profile'
+      path: '/social-links-profile'
+      fullPath: '/social-links-profile'
+      preLoaderRoute: typeof gettingStartedSocialLinksProfileImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -71,12 +86,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
+  '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
+  '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
 }
 
 export interface FileRoutesById {
@@ -84,18 +101,28 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/(getting-started)/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
+  '/(getting-started)/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blog-preview-card' | '/qr-code-component'
+  fullPaths:
+    | '/'
+    | '/blog-preview-card'
+    | '/qr-code-component'
+    | '/social-links-profile'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blog-preview-card' | '/qr-code-component'
+  to:
+    | '/'
+    | '/blog-preview-card'
+    | '/qr-code-component'
+    | '/social-links-profile'
   id:
     | '__root__'
     | '/'
     | '/(getting-started)/blog-preview-card'
     | '/(getting-started)/qr-code-component'
+    | '/(getting-started)/social-links-profile'
   fileRoutesById: FileRoutesById
 }
 
@@ -103,12 +130,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   gettingStartedBlogPreviewCardRoute: typeof gettingStartedBlogPreviewCardRoute
   gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
+  gettingStartedSocialLinksProfileRoute: typeof gettingStartedSocialLinksProfileRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   gettingStartedBlogPreviewCardRoute: gettingStartedBlogPreviewCardRoute,
   gettingStartedQrCodeComponentRoute: gettingStartedQrCodeComponentRoute,
+  gettingStartedSocialLinksProfileRoute: gettingStartedSocialLinksProfileRoute,
 }
 
 export const routeTree = rootRoute
@@ -123,7 +152,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/(getting-started)/blog-preview-card",
-        "/(getting-started)/qr-code-component"
+        "/(getting-started)/qr-code-component",
+        "/(getting-started)/social-links-profile"
       ]
     },
     "/": {
@@ -134,6 +164,9 @@ export const routeTree = rootRoute
     },
     "/(getting-started)/qr-code-component": {
       "filePath": "(getting-started)/qr-code-component.tsx"
+    },
+    "/(getting-started)/social-links-profile": {
+      "filePath": "(getting-started)/social-links-profile.tsx"
     }
   }
 }
