@@ -22,6 +22,10 @@ function Index() {
         <li>
           <Link to="/qr-code-component">QR code component</Link>
         </li>
+
+        <li>
+          <Link to="/blog-preview-card">Blog preview card</Link>
+        </li>
       </ol>
     </div>
   )

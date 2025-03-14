@@ -1,0 +1,135 @@
+@font-face {
+  font-display: swap;
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/figtree-v7-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../../assets/fonts/figtree-v7-latin-800.woff2") format("woff2");
+}
+
+.container {
+  --yellow: hsl(47, 88%, 63%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+
+  font-family: "Figtree";
+  font-weight: 500;
+  line-height: 1.5rem;
+
+  min-height: 100vh;
+  min-width: 320px;
+
+  background-color: var(--yellow);
+  color: var(--gray-950);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-inline: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  border: solid 1px var(--gray-950);
+  border-radius: 20px;
+  gap: 24px;
+  max-width: 384px;
+  padding: 24px;
+
+  background-color: white;
+  box-shadow: 8px 8px var(--gray-950);
+
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 12px 12px var(--gray-950);
+}
+
+.card:hover h2 {
+  color: var(--yellow);
+}
+
+.image {
+  border-radius: 10px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.badge {
+  background-color: var(--yellow);
+  border-radius: 4px;
+  padding: 4px 12px;
+  max-width: max-content;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.125rem;
+}
+
+.date {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.875rem;
+
+  margin-block: 12px;
+}
+
+.description {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+  line-height: 1.312rem;
+
+  margin-block: 12px 0;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-weight: 800;
+}
+
+@media (min-width: 640px) {
+  .badge {
+    font-size: 0.875rem;
+    line-height: 1.312rem;
+  }
+
+  .date {
+    font-size: 0.875rem;
+    line-height: 1.312rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .avatar {
+    font-size: 0.875rem;
+    line-height: 1.312rem;
+  }
+}

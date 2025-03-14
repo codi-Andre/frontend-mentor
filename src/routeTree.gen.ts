@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
+import { Route as gettingStartedBlogPreviewCardImport } from './routes/(getting-started)/blog-preview-card'
 
 // Create/Update Routes
 
@@ -29,6 +30,13 @@ const gettingStartedQrCodeComponentRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const gettingStartedBlogPreviewCardRoute =
+  gettingStartedBlogPreviewCardImport.update({
+    id: '/(getting-started)/blog-preview-card',
+    path: '/blog-preview-card',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -38,6 +46,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/(getting-started)/blog-preview-card': {
+      id: '/(getting-started)/blog-preview-card'
+      path: '/blog-preview-card'
+      fullPath: '/blog-preview-card'
+      preLoaderRoute: typeof gettingStartedBlogPreviewCardImport
       parentRoute: typeof rootRoute
     }
     '/(getting-started)/qr-code-component': {
@@ -54,36 +69,45 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/(getting-started)/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/qr-code-component'
+  fullPaths: '/' | '/blog-preview-card' | '/qr-code-component'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/qr-code-component'
-  id: '__root__' | '/' | '/(getting-started)/qr-code-component'
+  to: '/' | '/blog-preview-card' | '/qr-code-component'
+  id:
+    | '__root__'
+    | '/'
+    | '/(getting-started)/blog-preview-card'
+    | '/(getting-started)/qr-code-component'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  gettingStartedBlogPreviewCardRoute: typeof gettingStartedBlogPreviewCardRoute
   gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  gettingStartedBlogPreviewCardRoute: gettingStartedBlogPreviewCardRoute,
   gettingStartedQrCodeComponentRoute: gettingStartedQrCodeComponentRoute,
 }
 
@@ -98,11 +122,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/(getting-started)/blog-preview-card",
         "/(getting-started)/qr-code-component"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/(getting-started)/blog-preview-card": {
+      "filePath": "(getting-started)/blog-preview-card.tsx"
     },
     "/(getting-started)/qr-code-component": {
       "filePath": "(getting-started)/qr-code-component.tsx"
