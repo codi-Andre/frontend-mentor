@@ -30,6 +30,10 @@ function Index() {
         <li>
           <Link to="/social-links-profile">Social links profile</Link>
         </li>
+
+        <li>
+          <Link to="/recipe-page">Recipe page</Link>
+        </li>
       </ol>
     </div>
   )
