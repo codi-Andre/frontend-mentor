@@ -17,6 +17,7 @@ import { Route as gettingStartedRecipePageImport } from './routes/(getting-start
 import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
 import { Route as gettingStartedBlogPreviewCardImport } from './routes/(getting-started)/blog-preview-card'
 import { Route as buildingResponsiveLayoutsProductPreviewCardImport } from './routes/(building-responsive-layouts)/product-preview-card'
+import { Route as buildingResponsiveLayoutsFourCardFeatureSectionImport } from './routes/(building-responsive-layouts)/four-card-feature-section'
 
 // Create/Update Routes
 
@@ -60,6 +61,13 @@ const buildingResponsiveLayoutsProductPreviewCardRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const buildingResponsiveLayoutsFourCardFeatureSectionRoute =
+  buildingResponsiveLayoutsFourCardFeatureSectionImport.update({
+    id: '/(building-responsive-layouts)/four-card-feature-section',
+    path: '/four-card-feature-section',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -69,6 +77,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/(building-responsive-layouts)/four-card-feature-section': {
+      id: '/(building-responsive-layouts)/four-card-feature-section'
+      path: '/four-card-feature-section'
+      fullPath: '/four-card-feature-section'
+      preLoaderRoute: typeof buildingResponsiveLayoutsFourCardFeatureSectionImport
       parentRoute: typeof rootRoute
     }
     '/(building-responsive-layouts)/product-preview-card': {
@@ -113,6 +128,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
@@ -122,6 +138,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
@@ -132,6 +149,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/(building-responsive-layouts)/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/(building-responsive-layouts)/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/(getting-started)/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
@@ -143,6 +161,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/four-card-feature-section'
     | '/product-preview-card'
     | '/blog-preview-card'
     | '/qr-code-component'
@@ -151,6 +170,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/four-card-feature-section'
     | '/product-preview-card'
     | '/blog-preview-card'
     | '/qr-code-component'
@@ -159,6 +179,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/(building-responsive-layouts)/four-card-feature-section'
     | '/(building-responsive-layouts)/product-preview-card'
     | '/(getting-started)/blog-preview-card'
     | '/(getting-started)/qr-code-component'
@@ -169,6 +190,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  buildingResponsiveLayoutsFourCardFeatureSectionRoute: typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   buildingResponsiveLayoutsProductPreviewCardRoute: typeof buildingResponsiveLayoutsProductPreviewCardRoute
   gettingStartedBlogPreviewCardRoute: typeof gettingStartedBlogPreviewCardRoute
   gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
@@ -178,6 +200,8 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  buildingResponsiveLayoutsFourCardFeatureSectionRoute:
+    buildingResponsiveLayoutsFourCardFeatureSectionRoute,
   buildingResponsiveLayoutsProductPreviewCardRoute:
     buildingResponsiveLayoutsProductPreviewCardRoute,
   gettingStartedBlogPreviewCardRoute: gettingStartedBlogPreviewCardRoute,
@@ -197,6 +221,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/(building-responsive-layouts)/four-card-feature-section",
         "/(building-responsive-layouts)/product-preview-card",
         "/(getting-started)/blog-preview-card",
         "/(getting-started)/qr-code-component",
@@ -206,6 +231,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/(building-responsive-layouts)/four-card-feature-section": {
+      "filePath": "(building-responsive-layouts)/four-card-feature-section.tsx"
     },
     "/(building-responsive-layouts)/product-preview-card": {
       "filePath": "(building-responsive-layouts)/product-preview-card.tsx"
