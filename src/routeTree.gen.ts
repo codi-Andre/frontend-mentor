@@ -16,6 +16,7 @@ import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getti
 import { Route as gettingStartedRecipePageImport } from './routes/(getting-started)/recipe-page'
 import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
 import { Route as gettingStartedBlogPreviewCardImport } from './routes/(getting-started)/blog-preview-card'
+import { Route as buildingResponsiveLayoutsTestimonialsGridSectionImport } from './routes/(building-responsive-layouts)/testimonials-grid-section'
 import { Route as buildingResponsiveLayoutsProductPreviewCardImport } from './routes/(building-responsive-layouts)/product-preview-card'
 import { Route as buildingResponsiveLayoutsFourCardFeatureSectionImport } from './routes/(building-responsive-layouts)/four-card-feature-section'
 
@@ -51,6 +52,13 @@ const gettingStartedBlogPreviewCardRoute =
   gettingStartedBlogPreviewCardImport.update({
     id: '/(getting-started)/blog-preview-card',
     path: '/blog-preview-card',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const buildingResponsiveLayoutsTestimonialsGridSectionRoute =
+  buildingResponsiveLayoutsTestimonialsGridSectionImport.update({
+    id: '/(building-responsive-layouts)/testimonials-grid-section',
+    path: '/testimonials-grid-section',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -93,6 +101,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof buildingResponsiveLayoutsProductPreviewCardImport
       parentRoute: typeof rootRoute
     }
+    '/(building-responsive-layouts)/testimonials-grid-section': {
+      id: '/(building-responsive-layouts)/testimonials-grid-section'
+      path: '/testimonials-grid-section'
+      fullPath: '/testimonials-grid-section'
+      preLoaderRoute: typeof buildingResponsiveLayoutsTestimonialsGridSectionImport
+      parentRoute: typeof rootRoute
+    }
     '/(getting-started)/blog-preview-card': {
       id: '/(getting-started)/blog-preview-card'
       path: '/blog-preview-card'
@@ -130,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
+  '/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
   '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
@@ -140,6 +156,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
+  '/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
   '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
@@ -151,6 +168,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/(building-responsive-layouts)/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/(building-responsive-layouts)/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
+  '/(building-responsive-layouts)/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
   '/(getting-started)/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/(getting-started)/recipe-page': typeof gettingStartedRecipePageRoute
@@ -163,6 +181,7 @@ export interface FileRouteTypes {
     | '/'
     | '/four-card-feature-section'
     | '/product-preview-card'
+    | '/testimonials-grid-section'
     | '/blog-preview-card'
     | '/qr-code-component'
     | '/recipe-page'
@@ -172,6 +191,7 @@ export interface FileRouteTypes {
     | '/'
     | '/four-card-feature-section'
     | '/product-preview-card'
+    | '/testimonials-grid-section'
     | '/blog-preview-card'
     | '/qr-code-component'
     | '/recipe-page'
@@ -181,6 +201,7 @@ export interface FileRouteTypes {
     | '/'
     | '/(building-responsive-layouts)/four-card-feature-section'
     | '/(building-responsive-layouts)/product-preview-card'
+    | '/(building-responsive-layouts)/testimonials-grid-section'
     | '/(getting-started)/blog-preview-card'
     | '/(getting-started)/qr-code-component'
     | '/(getting-started)/recipe-page'
@@ -192,6 +213,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   buildingResponsiveLayoutsFourCardFeatureSectionRoute: typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   buildingResponsiveLayoutsProductPreviewCardRoute: typeof buildingResponsiveLayoutsProductPreviewCardRoute
+  buildingResponsiveLayoutsTestimonialsGridSectionRoute: typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
   gettingStartedBlogPreviewCardRoute: typeof gettingStartedBlogPreviewCardRoute
   gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
   gettingStartedRecipePageRoute: typeof gettingStartedRecipePageRoute
@@ -204,6 +226,8 @@ const rootRouteChildren: RootRouteChildren = {
     buildingResponsiveLayoutsFourCardFeatureSectionRoute,
   buildingResponsiveLayoutsProductPreviewCardRoute:
     buildingResponsiveLayoutsProductPreviewCardRoute,
+  buildingResponsiveLayoutsTestimonialsGridSectionRoute:
+    buildingResponsiveLayoutsTestimonialsGridSectionRoute,
   gettingStartedBlogPreviewCardRoute: gettingStartedBlogPreviewCardRoute,
   gettingStartedQrCodeComponentRoute: gettingStartedQrCodeComponentRoute,
   gettingStartedRecipePageRoute: gettingStartedRecipePageRoute,
@@ -223,6 +247,7 @@ export const routeTree = rootRoute
         "/",
         "/(building-responsive-layouts)/four-card-feature-section",
         "/(building-responsive-layouts)/product-preview-card",
+        "/(building-responsive-layouts)/testimonials-grid-section",
         "/(getting-started)/blog-preview-card",
         "/(getting-started)/qr-code-component",
         "/(getting-started)/recipe-page",
@@ -237,6 +262,9 @@ export const routeTree = rootRoute
     },
     "/(building-responsive-layouts)/product-preview-card": {
       "filePath": "(building-responsive-layouts)/product-preview-card.tsx"
+    },
+    "/(building-responsive-layouts)/testimonials-grid-section": {
+      "filePath": "(building-responsive-layouts)/testimonials-grid-section.tsx"
     },
     "/(getting-started)/blog-preview-card": {
       "filePath": "(getting-started)/blog-preview-card.tsx"

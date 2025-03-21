@@ -1,0 +1,187 @@
+@font-face {
+  font-display: swap;
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/barlow-semi-condensed-v15-latin-500.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/barlow-semi-condensed-v15-latin-600.woff2")
+    format("woff2");
+}
+
+.container {
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+  --blue-900: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+
+  background-color: var(--grey-100);
+  color: var(--black);
+
+  font-family: "Barlow Semi Condensed";
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.article {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 24px;
+
+  min-height: 100vh;
+  min-width: 320px;
+  padding: 48px 24px;
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  column-gap: 16px;
+
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow:
+    30px 60px 40px hsl(0 0% 0% / 0.1),
+    40px 80px 30px hsl(0 0% 0% / 0.05);
+}
+
+.card img {
+  border-radius: 9999px;
+  height: 32px;
+  width: 32px;
+}
+
+.card h2 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.card h2::first-line {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.card p {
+  grid-column: span 2;
+  margin-block: 4px 16px;
+}
+
+.card p:first-of-type {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.card:nth-child(1) {
+  background-color: var(--purple-500);
+  color: var(--grey-200);
+}
+
+.card:nth-child(2) {
+  background-color: var(--grey-500);
+  color: var(--grey-200);
+}
+
+.card:nth-child(4) {
+  background-color: var(--blue-900);
+  color: var(--grey-200);
+}
+
+.card:nth-child(3),
+.card:nth-child(5) {
+  background-color: white;
+  color: var(--grey-400);
+}
+
+.card:nth-child(1) h2::first-line,
+.card:nth-child(1) p:first-of-type,
+.card:nth-child(2) h2::first-line,
+.card:nth-child(2) p:first-of-type,
+.card:nth-child(4) h2::first-line,
+.card:nth-child(5) p:first-of-type {
+  color: var(--grey-100);
+}
+
+.card:nth-child(3) h2::first-line,
+.card:nth-child(3) p:first-of-type,
+.card:nth-child(5) h2::first-line,
+.card:nth-child(5) p:first-of-type {
+  color: var(--grey-500);
+}
+
+.card:nth-child(1) img {
+  border: solid 2px var(--purple-300);
+}
+
+.card:nth-child(4) img {
+  border: solid 2px var(--purple-500);
+}
+
+@media (min-width: 640px) {
+  .article {
+    margin-inline: auto;
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .article {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: min-content min-content;
+
+    align-content: center;
+
+    column-gap: 32px;
+    max-width: 1024px;
+  }
+
+  .card:nth-child(1) {
+    grid-column: 1 / span 6;
+  }
+
+  .card:nth-child(2) {
+    grid-column: 7 / span 3;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 1 / span 3;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 4 / span 6;
+  }
+
+  .card:nth-child(5) {
+    grid-column: 10 / span 3;
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (min-width: 1280px) {
+  .article {
+    max-width: 1280px;
+  }
+
+  .card:nth-child(1) {
+    background-image: url("../../assets/icons/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
+  }
+}

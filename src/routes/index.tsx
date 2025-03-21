@@ -48,6 +48,10 @@ function Index() {
         <li>
           <Link to="/four-card-feature-section">Four card feature section</Link>
         </li>
+
+        <li>
+          <Link to="/testimonials-grid-section">Testimonials grid section</Link>
+        </li>
       </ol>
     </div>
   )
