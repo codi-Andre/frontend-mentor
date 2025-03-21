@@ -18,6 +18,8 @@ function Index() {
         .
       </p>
 
+      <h2>Getting started</h2>
+
       <ol>
         <li>
           <Link to="/qr-code-component">QR code component</Link>
@@ -33,6 +35,14 @@ function Index() {
 
         <li>
           <Link to="/recipe-page">Recipe page</Link>
+        </li>
+      </ol>
+
+      <h2>Building responsive layouts</h2>
+
+      <ol>
+        <li>
+          <Link to="/product-preview-card">Product preview card component</Link>
         </li>
       </ol>
     </div>

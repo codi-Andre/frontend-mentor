@@ -16,6 +16,7 @@ import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getti
 import { Route as gettingStartedRecipePageImport } from './routes/(getting-started)/recipe-page'
 import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
 import { Route as gettingStartedBlogPreviewCardImport } from './routes/(getting-started)/blog-preview-card'
+import { Route as buildingResponsiveLayoutsProductPreviewCardImport } from './routes/(building-responsive-layouts)/product-preview-card'
 
 // Create/Update Routes
 
@@ -52,6 +53,13 @@ const gettingStartedBlogPreviewCardRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const buildingResponsiveLayoutsProductPreviewCardRoute =
+  buildingResponsiveLayoutsProductPreviewCardImport.update({
+    id: '/(building-responsive-layouts)/product-preview-card',
+    path: '/product-preview-card',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -61,6 +69,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/(building-responsive-layouts)/product-preview-card': {
+      id: '/(building-responsive-layouts)/product-preview-card'
+      path: '/product-preview-card'
+      fullPath: '/product-preview-card'
+      preLoaderRoute: typeof buildingResponsiveLayoutsProductPreviewCardImport
       parentRoute: typeof rootRoute
     }
     '/(getting-started)/blog-preview-card': {
@@ -98,6 +113,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
@@ -106,6 +122,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
@@ -115,6 +132,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/(building-responsive-layouts)/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/(getting-started)/blog-preview-card': typeof gettingStartedBlogPreviewCardRoute
   '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/(getting-started)/recipe-page': typeof gettingStartedRecipePageRoute
@@ -125,6 +143,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/product-preview-card'
     | '/blog-preview-card'
     | '/qr-code-component'
     | '/recipe-page'
@@ -132,6 +151,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/product-preview-card'
     | '/blog-preview-card'
     | '/qr-code-component'
     | '/recipe-page'
@@ -139,6 +159,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/(building-responsive-layouts)/product-preview-card'
     | '/(getting-started)/blog-preview-card'
     | '/(getting-started)/qr-code-component'
     | '/(getting-started)/recipe-page'
@@ -148,6 +169,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  buildingResponsiveLayoutsProductPreviewCardRoute: typeof buildingResponsiveLayoutsProductPreviewCardRoute
   gettingStartedBlogPreviewCardRoute: typeof gettingStartedBlogPreviewCardRoute
   gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
   gettingStartedRecipePageRoute: typeof gettingStartedRecipePageRoute
@@ -156,6 +178,8 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  buildingResponsiveLayoutsProductPreviewCardRoute:
+    buildingResponsiveLayoutsProductPreviewCardRoute,
   gettingStartedBlogPreviewCardRoute: gettingStartedBlogPreviewCardRoute,
   gettingStartedQrCodeComponentRoute: gettingStartedQrCodeComponentRoute,
   gettingStartedRecipePageRoute: gettingStartedRecipePageRoute,
@@ -173,6 +197,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/(building-responsive-layouts)/product-preview-card",
         "/(getting-started)/blog-preview-card",
         "/(getting-started)/qr-code-component",
         "/(getting-started)/recipe-page",
@@ -181,6 +206,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/(building-responsive-layouts)/product-preview-card": {
+      "filePath": "(building-responsive-layouts)/product-preview-card.tsx"
     },
     "/(getting-started)/blog-preview-card": {
       "filePath": "(getting-started)/blog-preview-card.tsx"

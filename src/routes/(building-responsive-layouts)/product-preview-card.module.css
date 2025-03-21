@@ -1,0 +1,156 @@
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/montserrat-v29-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/montserrat-v29-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/fraunces-v32-latin-700.woff2") format("woff2");
+}
+
+.container {
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--cream);
+  color: var(--grey);
+
+  min-height: 100vh;
+  padding: 24px 16px;
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  background-color: white;
+  border-radius: 12px;
+
+  font-family: "Montserrat";
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.picture > img {
+  border-radius: 12px 12px 0 0;
+  height: auto;
+  max-width: 100%;
+}
+
+.category {
+  display: inline-block;
+  margin: 16px 24px;
+
+  font-weight: 500;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+.title {
+  color: var(--black);
+
+  font-family: "Fraunces";
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 2rem;
+
+  margin: 0px 24px;
+}
+
+.description {
+  margin: 16px 24px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+  margin: 16px 24px;
+}
+
+.price > span {
+  color: var(--green-500);
+
+  font-family: "Fraunces";
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+  gap: 8px;
+  height: 48px;
+  margin: 0 24px 24px;
+  padding: 8px 24px;
+  width: calc(100% - 48px);
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  background-color: var(--green-500);
+  color: white;
+}
+
+.button:hover {
+  background-color: var(--green-700);
+}
+
+@media (min-width: 640px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    max-width: 640px;
+
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .picture > img {
+    border-radius: 12px 0 0 12px;
+    vertical-align: middle;
+  }
+
+  .title,
+  .price > span {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+  }
+
+  .category,
+  .description,
+  .price {
+    margin-block: 24px;
+  }
+}
