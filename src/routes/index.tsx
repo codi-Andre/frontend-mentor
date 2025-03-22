@@ -52,6 +52,10 @@ function Index() {
         <li>
           <Link to="/testimonials-grid-section">Testimonials grid section</Link>
         </li>
+
+        <li>
+          <Link to="/article-preview-component">Article preview component</Link>
+        </li>
       </ol>
     </div>
   )

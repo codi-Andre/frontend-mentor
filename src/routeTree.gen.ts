@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as javaScriptFundamentalsArticlePreviewComponentImport } from './routes/(javaScript-fundamentals)/article-preview-component'
 import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getting-started)/social-links-profile'
 import { Route as gettingStartedRecipePageImport } from './routes/(getting-started)/recipe-page'
 import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
@@ -27,6 +28,13 @@ const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const javaScriptFundamentalsArticlePreviewComponentRoute =
+  javaScriptFundamentalsArticlePreviewComponentImport.update({
+    id: '/(javaScript-fundamentals)/article-preview-component',
+    path: '/article-preview-component',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const gettingStartedSocialLinksProfileRoute =
   gettingStartedSocialLinksProfileImport.update({
@@ -136,6 +144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof gettingStartedSocialLinksProfileImport
       parentRoute: typeof rootRoute
     }
+    '/(javaScript-fundamentals)/article-preview-component': {
+      id: '/(javaScript-fundamentals)/article-preview-component'
+      path: '/article-preview-component'
+      fullPath: '/article-preview-component'
+      preLoaderRoute: typeof javaScriptFundamentalsArticlePreviewComponentImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -150,6 +165,7 @@ export interface FileRoutesByFullPath {
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
 }
 
 export interface FileRoutesByTo {
@@ -161,6 +177,7 @@ export interface FileRoutesByTo {
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
 }
 
 export interface FileRoutesById {
@@ -173,6 +190,7 @@ export interface FileRoutesById {
   '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/(getting-started)/recipe-page': typeof gettingStartedRecipePageRoute
   '/(getting-started)/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/(javaScript-fundamentals)/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
 }
 
 export interface FileRouteTypes {
@@ -186,6 +204,7 @@ export interface FileRouteTypes {
     | '/qr-code-component'
     | '/recipe-page'
     | '/social-links-profile'
+    | '/article-preview-component'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -196,6 +215,7 @@ export interface FileRouteTypes {
     | '/qr-code-component'
     | '/recipe-page'
     | '/social-links-profile'
+    | '/article-preview-component'
   id:
     | '__root__'
     | '/'
@@ -206,6 +226,7 @@ export interface FileRouteTypes {
     | '/(getting-started)/qr-code-component'
     | '/(getting-started)/recipe-page'
     | '/(getting-started)/social-links-profile'
+    | '/(javaScript-fundamentals)/article-preview-component'
   fileRoutesById: FileRoutesById
 }
 
@@ -218,6 +239,7 @@ export interface RootRouteChildren {
   gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
   gettingStartedRecipePageRoute: typeof gettingStartedRecipePageRoute
   gettingStartedSocialLinksProfileRoute: typeof gettingStartedSocialLinksProfileRoute
+  javaScriptFundamentalsArticlePreviewComponentRoute: typeof javaScriptFundamentalsArticlePreviewComponentRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -232,6 +254,8 @@ const rootRouteChildren: RootRouteChildren = {
   gettingStartedQrCodeComponentRoute: gettingStartedQrCodeComponentRoute,
   gettingStartedRecipePageRoute: gettingStartedRecipePageRoute,
   gettingStartedSocialLinksProfileRoute: gettingStartedSocialLinksProfileRoute,
+  javaScriptFundamentalsArticlePreviewComponentRoute:
+    javaScriptFundamentalsArticlePreviewComponentRoute,
 }
 
 export const routeTree = rootRoute
@@ -251,7 +275,8 @@ export const routeTree = rootRoute
         "/(getting-started)/blog-preview-card",
         "/(getting-started)/qr-code-component",
         "/(getting-started)/recipe-page",
-        "/(getting-started)/social-links-profile"
+        "/(getting-started)/social-links-profile",
+        "/(javaScript-fundamentals)/article-preview-component"
       ]
     },
     "/": {
@@ -277,6 +302,9 @@ export const routeTree = rootRoute
     },
     "/(getting-started)/social-links-profile": {
       "filePath": "(getting-started)/social-links-profile.tsx"
+    },
+    "/(javaScript-fundamentals)/article-preview-component": {
+      "filePath": "(javaScript-fundamentals)/article-preview-component.tsx"
     }
   }
 }
