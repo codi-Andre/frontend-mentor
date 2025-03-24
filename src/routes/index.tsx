@@ -52,9 +52,19 @@ function Index() {
         <li>
           <Link to="/testimonials-grid-section">Testimonials grid section</Link>
         </li>
+      </ol>
 
+      <h2>Javascript fundamentals</h2>
+
+      <ol>
         <li>
           <Link to="/article-preview-component">Article preview component</Link>
+        </li>
+
+        <li>
+          <Link to="/newsletter-sign-up-form-with-success-message">
+            Newsletter sign-up form with success message
+          </Link>
         </li>
       </ol>
     </div>

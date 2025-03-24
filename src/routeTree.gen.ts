@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport } from './routes/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
 import { Route as javaScriptFundamentalsArticlePreviewComponentImport } from './routes/(javaScript-fundamentals)/article-preview-component'
 import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getting-started)/social-links-profile'
 import { Route as gettingStartedRecipePageImport } from './routes/(getting-started)/recipe-page'
@@ -28,6 +29,13 @@ const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute =
+  javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport.update({
+    id: '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message',
+    path: '/newsletter-sign-up-form-with-success-message',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const javaScriptFundamentalsArticlePreviewComponentRoute =
   javaScriptFundamentalsArticlePreviewComponentImport.update({
@@ -151,6 +159,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof javaScriptFundamentalsArticlePreviewComponentImport
       parentRoute: typeof rootRoute
     }
+    '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message': {
+      id: '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
+      path: '/newsletter-sign-up-form-with-success-message'
+      fullPath: '/newsletter-sign-up-form-with-success-message'
+      preLoaderRoute: typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -166,6 +181,7 @@ export interface FileRoutesByFullPath {
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
+  '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
 }
 
 export interface FileRoutesByTo {
@@ -178,6 +194,7 @@ export interface FileRoutesByTo {
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
+  '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
 }
 
 export interface FileRoutesById {
@@ -191,6 +208,7 @@ export interface FileRoutesById {
   '/(getting-started)/recipe-page': typeof gettingStartedRecipePageRoute
   '/(getting-started)/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/(javaScript-fundamentals)/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
+  '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
 }
 
 export interface FileRouteTypes {
@@ -205,6 +223,7 @@ export interface FileRouteTypes {
     | '/recipe-page'
     | '/social-links-profile'
     | '/article-preview-component'
+    | '/newsletter-sign-up-form-with-success-message'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -216,6 +235,7 @@ export interface FileRouteTypes {
     | '/recipe-page'
     | '/social-links-profile'
     | '/article-preview-component'
+    | '/newsletter-sign-up-form-with-success-message'
   id:
     | '__root__'
     | '/'
@@ -227,6 +247,7 @@ export interface FileRouteTypes {
     | '/(getting-started)/recipe-page'
     | '/(getting-started)/social-links-profile'
     | '/(javaScript-fundamentals)/article-preview-component'
+    | '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
   fileRoutesById: FileRoutesById
 }
 
@@ -240,6 +261,7 @@ export interface RootRouteChildren {
   gettingStartedRecipePageRoute: typeof gettingStartedRecipePageRoute
   gettingStartedSocialLinksProfileRoute: typeof gettingStartedSocialLinksProfileRoute
   javaScriptFundamentalsArticlePreviewComponentRoute: typeof javaScriptFundamentalsArticlePreviewComponentRoute
+  javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute: typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -256,6 +278,8 @@ const rootRouteChildren: RootRouteChildren = {
   gettingStartedSocialLinksProfileRoute: gettingStartedSocialLinksProfileRoute,
   javaScriptFundamentalsArticlePreviewComponentRoute:
     javaScriptFundamentalsArticlePreviewComponentRoute,
+  javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute:
+    javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute,
 }
 
 export const routeTree = rootRoute
@@ -276,7 +300,8 @@ export const routeTree = rootRoute
         "/(getting-started)/qr-code-component",
         "/(getting-started)/recipe-page",
         "/(getting-started)/social-links-profile",
-        "/(javaScript-fundamentals)/article-preview-component"
+        "/(javaScript-fundamentals)/article-preview-component",
+        "/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message"
       ]
     },
     "/": {
@@ -305,6 +330,9 @@ export const routeTree = rootRoute
     },
     "/(javaScript-fundamentals)/article-preview-component": {
       "filePath": "(javaScript-fundamentals)/article-preview-component.tsx"
+    },
+    "/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message": {
+      "filePath": "(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message.tsx"
     }
   }
 }
