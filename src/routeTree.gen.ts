@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as javaScriptFundamentalsTimeTrackingDashboardImport } from './routes/(javaScript-fundamentals)/time-tracking-dashboard'
 import { Route as javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport } from './routes/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
 import { Route as javaScriptFundamentalsArticlePreviewComponentImport } from './routes/(javaScript-fundamentals)/article-preview-component'
 import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getting-started)/social-links-profile'
@@ -29,6 +30,13 @@ const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const javaScriptFundamentalsTimeTrackingDashboardRoute =
+  javaScriptFundamentalsTimeTrackingDashboardImport.update({
+    id: '/(javaScript-fundamentals)/time-tracking-dashboard',
+    path: '/time-tracking-dashboard',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute =
   javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport.update({
@@ -166,6 +174,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport
       parentRoute: typeof rootRoute
     }
+    '/(javaScript-fundamentals)/time-tracking-dashboard': {
+      id: '/(javaScript-fundamentals)/time-tracking-dashboard'
+      path: '/time-tracking-dashboard'
+      fullPath: '/time-tracking-dashboard'
+      preLoaderRoute: typeof javaScriptFundamentalsTimeTrackingDashboardImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -182,6 +197,7 @@ export interface FileRoutesByFullPath {
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
+  '/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
 }
 
 export interface FileRoutesByTo {
@@ -195,6 +211,7 @@ export interface FileRoutesByTo {
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
+  '/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
 }
 
 export interface FileRoutesById {
@@ -209,6 +226,7 @@ export interface FileRoutesById {
   '/(getting-started)/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/(javaScript-fundamentals)/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
+  '/(javaScript-fundamentals)/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
 }
 
 export interface FileRouteTypes {
@@ -224,6 +242,7 @@ export interface FileRouteTypes {
     | '/social-links-profile'
     | '/article-preview-component'
     | '/newsletter-sign-up-form-with-success-message'
+    | '/time-tracking-dashboard'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -236,6 +255,7 @@ export interface FileRouteTypes {
     | '/social-links-profile'
     | '/article-preview-component'
     | '/newsletter-sign-up-form-with-success-message'
+    | '/time-tracking-dashboard'
   id:
     | '__root__'
     | '/'
@@ -248,6 +268,7 @@ export interface FileRouteTypes {
     | '/(getting-started)/social-links-profile'
     | '/(javaScript-fundamentals)/article-preview-component'
     | '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
+    | '/(javaScript-fundamentals)/time-tracking-dashboard'
   fileRoutesById: FileRoutesById
 }
 
@@ -262,6 +283,7 @@ export interface RootRouteChildren {
   gettingStartedSocialLinksProfileRoute: typeof gettingStartedSocialLinksProfileRoute
   javaScriptFundamentalsArticlePreviewComponentRoute: typeof javaScriptFundamentalsArticlePreviewComponentRoute
   javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute: typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
+  javaScriptFundamentalsTimeTrackingDashboardRoute: typeof javaScriptFundamentalsTimeTrackingDashboardRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -280,6 +302,8 @@ const rootRouteChildren: RootRouteChildren = {
     javaScriptFundamentalsArticlePreviewComponentRoute,
   javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute:
     javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute,
+  javaScriptFundamentalsTimeTrackingDashboardRoute:
+    javaScriptFundamentalsTimeTrackingDashboardRoute,
 }
 
 export const routeTree = rootRoute
@@ -301,7 +325,8 @@ export const routeTree = rootRoute
         "/(getting-started)/recipe-page",
         "/(getting-started)/social-links-profile",
         "/(javaScript-fundamentals)/article-preview-component",
-        "/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message"
+        "/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message",
+        "/(javaScript-fundamentals)/time-tracking-dashboard"
       ]
     },
     "/": {
@@ -333,6 +358,9 @@ export const routeTree = rootRoute
     },
     "/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message": {
       "filePath": "(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message.tsx"
+    },
+    "/(javaScript-fundamentals)/time-tracking-dashboard": {
+      "filePath": "(javaScript-fundamentals)/time-tracking-dashboard.tsx"
     }
   }
 }

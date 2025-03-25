@@ -66,6 +66,10 @@ function Index() {
             Newsletter sign-up form with success message
           </Link>
         </li>
+
+        <li>
+          <Link to="/time-tracking-dashboard">Time tracking dashboard</Link>
+        </li>
       </ol>
     </div>
   )
