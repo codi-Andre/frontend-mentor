@@ -70,6 +70,10 @@ function Index() {
         <li>
           <Link to="/time-tracking-dashboard">Time tracking dashboard</Link>
         </li>
+
+        <li>
+          <Link to="/tip-calculator-app">Tip calculator app</Link>
+        </li>
       </ol>
     </div>
   )

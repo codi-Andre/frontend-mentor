@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as javaScriptFundamentalsTipCalculatorAppImport } from './routes/(javaScript-fundamentals)/tip-calculator-app'
 import { Route as javaScriptFundamentalsTimeTrackingDashboardImport } from './routes/(javaScript-fundamentals)/time-tracking-dashboard'
 import { Route as javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport } from './routes/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
 import { Route as javaScriptFundamentalsArticlePreviewComponentImport } from './routes/(javaScript-fundamentals)/article-preview-component'
@@ -30,6 +31,13 @@ const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const javaScriptFundamentalsTipCalculatorAppRoute =
+  javaScriptFundamentalsTipCalculatorAppImport.update({
+    id: '/(javaScript-fundamentals)/tip-calculator-app',
+    path: '/tip-calculator-app',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const javaScriptFundamentalsTimeTrackingDashboardRoute =
   javaScriptFundamentalsTimeTrackingDashboardImport.update({
@@ -181,6 +189,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof javaScriptFundamentalsTimeTrackingDashboardImport
       parentRoute: typeof rootRoute
     }
+    '/(javaScript-fundamentals)/tip-calculator-app': {
+      id: '/(javaScript-fundamentals)/tip-calculator-app'
+      path: '/tip-calculator-app'
+      fullPath: '/tip-calculator-app'
+      preLoaderRoute: typeof javaScriptFundamentalsTipCalculatorAppImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -198,6 +213,7 @@ export interface FileRoutesByFullPath {
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
+  '/tip-calculator-app': typeof javaScriptFundamentalsTipCalculatorAppRoute
 }
 
 export interface FileRoutesByTo {
@@ -212,6 +228,7 @@ export interface FileRoutesByTo {
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
+  '/tip-calculator-app': typeof javaScriptFundamentalsTipCalculatorAppRoute
 }
 
 export interface FileRoutesById {
@@ -227,6 +244,7 @@ export interface FileRoutesById {
   '/(javaScript-fundamentals)/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/(javaScript-fundamentals)/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
+  '/(javaScript-fundamentals)/tip-calculator-app': typeof javaScriptFundamentalsTipCalculatorAppRoute
 }
 
 export interface FileRouteTypes {
@@ -243,6 +261,7 @@ export interface FileRouteTypes {
     | '/article-preview-component'
     | '/newsletter-sign-up-form-with-success-message'
     | '/time-tracking-dashboard'
+    | '/tip-calculator-app'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -256,6 +275,7 @@ export interface FileRouteTypes {
     | '/article-preview-component'
     | '/newsletter-sign-up-form-with-success-message'
     | '/time-tracking-dashboard'
+    | '/tip-calculator-app'
   id:
     | '__root__'
     | '/'
@@ -269,6 +289,7 @@ export interface FileRouteTypes {
     | '/(javaScript-fundamentals)/article-preview-component'
     | '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
     | '/(javaScript-fundamentals)/time-tracking-dashboard'
+    | '/(javaScript-fundamentals)/tip-calculator-app'
   fileRoutesById: FileRoutesById
 }
 
@@ -284,6 +305,7 @@ export interface RootRouteChildren {
   javaScriptFundamentalsArticlePreviewComponentRoute: typeof javaScriptFundamentalsArticlePreviewComponentRoute
   javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute: typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   javaScriptFundamentalsTimeTrackingDashboardRoute: typeof javaScriptFundamentalsTimeTrackingDashboardRoute
+  javaScriptFundamentalsTipCalculatorAppRoute: typeof javaScriptFundamentalsTipCalculatorAppRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -304,6 +326,8 @@ const rootRouteChildren: RootRouteChildren = {
     javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute,
   javaScriptFundamentalsTimeTrackingDashboardRoute:
     javaScriptFundamentalsTimeTrackingDashboardRoute,
+  javaScriptFundamentalsTipCalculatorAppRoute:
+    javaScriptFundamentalsTipCalculatorAppRoute,
 }
 
 export const routeTree = rootRoute
@@ -326,7 +350,8 @@ export const routeTree = rootRoute
         "/(getting-started)/social-links-profile",
         "/(javaScript-fundamentals)/article-preview-component",
         "/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message",
-        "/(javaScript-fundamentals)/time-tracking-dashboard"
+        "/(javaScript-fundamentals)/time-tracking-dashboard",
+        "/(javaScript-fundamentals)/tip-calculator-app"
       ]
     },
     "/": {
@@ -361,6 +386,9 @@ export const routeTree = rootRoute
     },
     "/(javaScript-fundamentals)/time-tracking-dashboard": {
       "filePath": "(javaScript-fundamentals)/time-tracking-dashboard.tsx"
+    },
+    "/(javaScript-fundamentals)/tip-calculator-app": {
+      "filePath": "(javaScript-fundamentals)/tip-calculator-app.tsx"
     }
   }
 }
