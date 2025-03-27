@@ -84,6 +84,10 @@ function Index() {
             Interactive rating component
           </Link>
         </li>
+
+        <li>
+          <Link to="/faq-accordion">FAQ accordion</Link>
+        </li>
       </ol>
     </div>
   )

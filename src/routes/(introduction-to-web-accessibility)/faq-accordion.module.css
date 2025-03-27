@@ -1,0 +1,163 @@
+@font-face {
+  font-display: swap;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/work-sans-v19-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/work-sans-v19-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/work-sans-v19-latin-700.woff2") format("woff2");
+}
+
+.container {
+  --white: hsl(0, 0%, 100%);
+  --pink-50: hsl(275, 100%, 97%);
+  --pink-500: hsl(281, 83%, 54%);
+  --purple-800: hsl(292, 16%, 49%);
+  --purple-900: hsl(292, 42%, 14%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  min-width: 320px;
+  padding: 24px;
+
+  font-family: "Work Sans";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  background-color: var(--pink-50);
+  background-image: url("../../assets/images/background-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: var(--purple-800);
+}
+
+.article {
+  background-color: var(--white);
+
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+
+  margin-block: 0 24px;
+  gap: 24px;
+
+  color: var(--purple-900);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.title > img {
+  height: 24px;
+  width: 24px;
+
+  object-fit: contain;
+}
+
+.card:not(:last-child) {
+  padding-block: 24px;
+}
+
+.card:last-child {
+  padding-top: 24px;
+}
+
+.card + .card {
+  border-top: solid 2px var(--pink-50);
+}
+
+.card > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  color: var(--purple-900);
+  font-weight: 700;
+  list-style: none;
+}
+
+.card summary:hover {
+  color: var(--pink-500);
+  cursor: pointer;
+}
+
+.card summary:focus-visible {
+  color: var(--pink-500);
+  outline: none;
+}
+
+.card > summary::after {
+  content: "";
+  flex-shrink: 0;
+  height: 32px;
+  width: 32px;
+
+  background-image: url("../../assets/icons/icon-plus.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card[open] > summary::after {
+  background-image: url("../../assets/icons/icon-minus.svg");
+}
+
+.card > p {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 640px) {
+  .container {
+    background-image: url("../../assets/images/background-pattern-desktop.svg");
+
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .article {
+    border-radius: 16px;
+    margin-inline: auto;
+    max-width: 640px;
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .title > img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .card > p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
