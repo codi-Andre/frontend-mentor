@@ -16,6 +16,7 @@ import { Route as javaScriptFundamentalsTipCalculatorAppImport } from './routes/
 import { Route as javaScriptFundamentalsTimeTrackingDashboardImport } from './routes/(javaScript-fundamentals)/time-tracking-dashboard'
 import { Route as javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport } from './routes/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
 import { Route as javaScriptFundamentalsArticlePreviewComponentImport } from './routes/(javaScript-fundamentals)/article-preview-component'
+import { Route as introductionToWebAccessibilityInteractiveRatingComponentImport } from './routes/(introduction-to-web-accessibility)/interactive-rating-component'
 import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getting-started)/social-links-profile'
 import { Route as gettingStartedRecipePageImport } from './routes/(getting-started)/recipe-page'
 import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
@@ -57,6 +58,13 @@ const javaScriptFundamentalsArticlePreviewComponentRoute =
   javaScriptFundamentalsArticlePreviewComponentImport.update({
     id: '/(javaScript-fundamentals)/article-preview-component',
     path: '/article-preview-component',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const introductionToWebAccessibilityInteractiveRatingComponentRoute =
+  introductionToWebAccessibilityInteractiveRatingComponentImport.update({
+    id: '/(introduction-to-web-accessibility)/interactive-rating-component',
+    path: '/interactive-rating-component',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -168,6 +176,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof gettingStartedSocialLinksProfileImport
       parentRoute: typeof rootRoute
     }
+    '/(introduction-to-web-accessibility)/interactive-rating-component': {
+      id: '/(introduction-to-web-accessibility)/interactive-rating-component'
+      path: '/interactive-rating-component'
+      fullPath: '/interactive-rating-component'
+      preLoaderRoute: typeof introductionToWebAccessibilityInteractiveRatingComponentImport
+      parentRoute: typeof rootRoute
+    }
     '/(javaScript-fundamentals)/article-preview-component': {
       id: '/(javaScript-fundamentals)/article-preview-component'
       path: '/article-preview-component'
@@ -210,6 +225,7 @@ export interface FileRoutesByFullPath {
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
@@ -225,6 +241,7 @@ export interface FileRoutesByTo {
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
@@ -241,6 +258,7 @@ export interface FileRoutesById {
   '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/(getting-started)/recipe-page': typeof gettingStartedRecipePageRoute
   '/(getting-started)/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/(introduction-to-web-accessibility)/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/(javaScript-fundamentals)/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/(javaScript-fundamentals)/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
@@ -258,6 +276,7 @@ export interface FileRouteTypes {
     | '/qr-code-component'
     | '/recipe-page'
     | '/social-links-profile'
+    | '/interactive-rating-component'
     | '/article-preview-component'
     | '/newsletter-sign-up-form-with-success-message'
     | '/time-tracking-dashboard'
@@ -272,6 +291,7 @@ export interface FileRouteTypes {
     | '/qr-code-component'
     | '/recipe-page'
     | '/social-links-profile'
+    | '/interactive-rating-component'
     | '/article-preview-component'
     | '/newsletter-sign-up-form-with-success-message'
     | '/time-tracking-dashboard'
@@ -286,6 +306,7 @@ export interface FileRouteTypes {
     | '/(getting-started)/qr-code-component'
     | '/(getting-started)/recipe-page'
     | '/(getting-started)/social-links-profile'
+    | '/(introduction-to-web-accessibility)/interactive-rating-component'
     | '/(javaScript-fundamentals)/article-preview-component'
     | '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
     | '/(javaScript-fundamentals)/time-tracking-dashboard'
@@ -302,6 +323,7 @@ export interface RootRouteChildren {
   gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
   gettingStartedRecipePageRoute: typeof gettingStartedRecipePageRoute
   gettingStartedSocialLinksProfileRoute: typeof gettingStartedSocialLinksProfileRoute
+  introductionToWebAccessibilityInteractiveRatingComponentRoute: typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   javaScriptFundamentalsArticlePreviewComponentRoute: typeof javaScriptFundamentalsArticlePreviewComponentRoute
   javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute: typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   javaScriptFundamentalsTimeTrackingDashboardRoute: typeof javaScriptFundamentalsTimeTrackingDashboardRoute
@@ -320,6 +342,8 @@ const rootRouteChildren: RootRouteChildren = {
   gettingStartedQrCodeComponentRoute: gettingStartedQrCodeComponentRoute,
   gettingStartedRecipePageRoute: gettingStartedRecipePageRoute,
   gettingStartedSocialLinksProfileRoute: gettingStartedSocialLinksProfileRoute,
+  introductionToWebAccessibilityInteractiveRatingComponentRoute:
+    introductionToWebAccessibilityInteractiveRatingComponentRoute,
   javaScriptFundamentalsArticlePreviewComponentRoute:
     javaScriptFundamentalsArticlePreviewComponentRoute,
   javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute:
@@ -348,6 +372,7 @@ export const routeTree = rootRoute
         "/(getting-started)/qr-code-component",
         "/(getting-started)/recipe-page",
         "/(getting-started)/social-links-profile",
+        "/(introduction-to-web-accessibility)/interactive-rating-component",
         "/(javaScript-fundamentals)/article-preview-component",
         "/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message",
         "/(javaScript-fundamentals)/time-tracking-dashboard",
@@ -377,6 +402,9 @@ export const routeTree = rootRoute
     },
     "/(getting-started)/social-links-profile": {
       "filePath": "(getting-started)/social-links-profile.tsx"
+    },
+    "/(introduction-to-web-accessibility)/interactive-rating-component": {
+      "filePath": "(introduction-to-web-accessibility)/interactive-rating-component.tsx"
     },
     "/(javaScript-fundamentals)/article-preview-component": {
       "filePath": "(javaScript-fundamentals)/article-preview-component.tsx"

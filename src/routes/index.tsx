@@ -75,6 +75,16 @@ function Index() {
           <Link to="/tip-calculator-app">Tip calculator app</Link>
         </li>
       </ol>
+
+      <h2>Introduction to web accessibility</h2>
+
+      <ol>
+        <li>
+          <Link to="/interactive-rating-component">
+            Interactive rating component
+          </Link>
+        </li>
+      </ol>
     </div>
   )
 }
