@@ -18,6 +18,7 @@ import { Route as javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageIm
 import { Route as javaScriptFundamentalsArticlePreviewComponentImport } from './routes/(javaScript-fundamentals)/article-preview-component'
 import { Route as introductionToWebAccessibilityInteractiveRatingComponentImport } from './routes/(introduction-to-web-accessibility)/interactive-rating-component'
 import { Route as introductionToWebAccessibilityFaqAccordionImport } from './routes/(introduction-to-web-accessibility)/faq-accordion'
+import { Route as introductionToWebAccessibilityContactFormImport } from './routes/(introduction-to-web-accessibility)/contact-form'
 import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getting-started)/social-links-profile'
 import { Route as gettingStartedRecipePageImport } from './routes/(getting-started)/recipe-page'
 import { Route as gettingStartedQrCodeComponentImport } from './routes/(getting-started)/qr-code-component'
@@ -73,6 +74,13 @@ const introductionToWebAccessibilityFaqAccordionRoute =
   introductionToWebAccessibilityFaqAccordionImport.update({
     id: '/(introduction-to-web-accessibility)/faq-accordion',
     path: '/faq-accordion',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const introductionToWebAccessibilityContactFormRoute =
+  introductionToWebAccessibilityContactFormImport.update({
+    id: '/(introduction-to-web-accessibility)/contact-form',
+    path: '/contact-form',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -184,6 +192,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof gettingStartedSocialLinksProfileImport
       parentRoute: typeof rootRoute
     }
+    '/(introduction-to-web-accessibility)/contact-form': {
+      id: '/(introduction-to-web-accessibility)/contact-form'
+      path: '/contact-form'
+      fullPath: '/contact-form'
+      preLoaderRoute: typeof introductionToWebAccessibilityContactFormImport
+      parentRoute: typeof rootRoute
+    }
     '/(introduction-to-web-accessibility)/faq-accordion': {
       id: '/(introduction-to-web-accessibility)/faq-accordion'
       path: '/faq-accordion'
@@ -240,6 +255,7 @@ export interface FileRoutesByFullPath {
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/contact-form': typeof introductionToWebAccessibilityContactFormRoute
   '/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
@@ -257,6 +273,7 @@ export interface FileRoutesByTo {
   '/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/contact-form': typeof introductionToWebAccessibilityContactFormRoute
   '/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
@@ -275,6 +292,7 @@ export interface FileRoutesById {
   '/(getting-started)/qr-code-component': typeof gettingStartedQrCodeComponentRoute
   '/(getting-started)/recipe-page': typeof gettingStartedRecipePageRoute
   '/(getting-started)/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
+  '/(introduction-to-web-accessibility)/contact-form': typeof introductionToWebAccessibilityContactFormRoute
   '/(introduction-to-web-accessibility)/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/(introduction-to-web-accessibility)/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/(javaScript-fundamentals)/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
@@ -294,6 +312,7 @@ export interface FileRouteTypes {
     | '/qr-code-component'
     | '/recipe-page'
     | '/social-links-profile'
+    | '/contact-form'
     | '/faq-accordion'
     | '/interactive-rating-component'
     | '/article-preview-component'
@@ -310,6 +329,7 @@ export interface FileRouteTypes {
     | '/qr-code-component'
     | '/recipe-page'
     | '/social-links-profile'
+    | '/contact-form'
     | '/faq-accordion'
     | '/interactive-rating-component'
     | '/article-preview-component'
@@ -326,6 +346,7 @@ export interface FileRouteTypes {
     | '/(getting-started)/qr-code-component'
     | '/(getting-started)/recipe-page'
     | '/(getting-started)/social-links-profile'
+    | '/(introduction-to-web-accessibility)/contact-form'
     | '/(introduction-to-web-accessibility)/faq-accordion'
     | '/(introduction-to-web-accessibility)/interactive-rating-component'
     | '/(javaScript-fundamentals)/article-preview-component'
@@ -344,6 +365,7 @@ export interface RootRouteChildren {
   gettingStartedQrCodeComponentRoute: typeof gettingStartedQrCodeComponentRoute
   gettingStartedRecipePageRoute: typeof gettingStartedRecipePageRoute
   gettingStartedSocialLinksProfileRoute: typeof gettingStartedSocialLinksProfileRoute
+  introductionToWebAccessibilityContactFormRoute: typeof introductionToWebAccessibilityContactFormRoute
   introductionToWebAccessibilityFaqAccordionRoute: typeof introductionToWebAccessibilityFaqAccordionRoute
   introductionToWebAccessibilityInteractiveRatingComponentRoute: typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   javaScriptFundamentalsArticlePreviewComponentRoute: typeof javaScriptFundamentalsArticlePreviewComponentRoute
@@ -364,6 +386,8 @@ const rootRouteChildren: RootRouteChildren = {
   gettingStartedQrCodeComponentRoute: gettingStartedQrCodeComponentRoute,
   gettingStartedRecipePageRoute: gettingStartedRecipePageRoute,
   gettingStartedSocialLinksProfileRoute: gettingStartedSocialLinksProfileRoute,
+  introductionToWebAccessibilityContactFormRoute:
+    introductionToWebAccessibilityContactFormRoute,
   introductionToWebAccessibilityFaqAccordionRoute:
     introductionToWebAccessibilityFaqAccordionRoute,
   introductionToWebAccessibilityInteractiveRatingComponentRoute:
@@ -396,6 +420,7 @@ export const routeTree = rootRoute
         "/(getting-started)/qr-code-component",
         "/(getting-started)/recipe-page",
         "/(getting-started)/social-links-profile",
+        "/(introduction-to-web-accessibility)/contact-form",
         "/(introduction-to-web-accessibility)/faq-accordion",
         "/(introduction-to-web-accessibility)/interactive-rating-component",
         "/(javaScript-fundamentals)/article-preview-component",
@@ -427,6 +452,9 @@ export const routeTree = rootRoute
     },
     "/(getting-started)/social-links-profile": {
       "filePath": "(getting-started)/social-links-profile.tsx"
+    },
+    "/(introduction-to-web-accessibility)/contact-form": {
+      "filePath": "(introduction-to-web-accessibility)/contact-form.tsx"
     },
     "/(introduction-to-web-accessibility)/faq-accordion": {
       "filePath": "(introduction-to-web-accessibility)/faq-accordion.tsx"

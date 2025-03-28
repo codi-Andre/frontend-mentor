@@ -88,6 +88,10 @@ function Index() {
         <li>
           <Link to="/faq-accordion">FAQ accordion</Link>
         </li>
+
+        <li>
+          <Link to="/contact-form">Contact form</Link>
+        </li>
       </ol>
     </div>
   )
