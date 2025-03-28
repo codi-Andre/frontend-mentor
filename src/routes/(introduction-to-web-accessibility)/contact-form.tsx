@@ -115,12 +115,12 @@ function RouteComponent() {
             aria-invalid={errors.firstName}
             aria-describedby="first-name-error"
           />
-          <p
+          <span
             id="first-name-error"
             className={errors.firstName ? styles.error : styles.hidden}
           >
             This field is required
-          </p>
+          </span>
         </label>
 
         <label className={styles.input}>
@@ -138,12 +138,12 @@ function RouteComponent() {
             aria-invalid={errors.lastName}
             aria-describedby="last-name-error"
           />
-          <p
+          <span
             id="last-name-error"
             className={errors.lastName ? styles.error : styles.hidden}
           >
             This field is required
-          </p>
+          </span>
         </label>
 
         <label className={styles.input}>
@@ -167,7 +167,7 @@ function RouteComponent() {
             aria-invalid={errors.invalidEmail || errors.emptyEmail}
             aria-describedby="email-error"
           />
-          <p
+          <span
             className={
               errors.invalidEmail || errors.emptyEmail
                 ? styles.error
@@ -181,7 +181,7 @@ function RouteComponent() {
             <span className={errors.emptyEmail ? "" : styles.hidden}>
               This field is required
             </span>
-          </p>
+          </span>
         </label>
 
         <fieldset className={styles.fieldset}>
@@ -219,12 +219,12 @@ function RouteComponent() {
             Support Request
           </label>
 
-          <p
+          <span
             id="query-error"
             className={errors.query ? styles.error : styles.hidden}
           >
             Please select a query type
-          </p>
+          </span>
         </fieldset>
 
         <label className={styles.textarea}>
@@ -241,12 +241,12 @@ function RouteComponent() {
             aria-invalid={errors.message}
             aria-describedby="message-error"
           />
-          <p
+          <span
             id="message-error"
             className={errors.message ? styles.error : styles.hidden}
           >
             This field is required
-          </p>
+          </span>
         </label>
 
         <label className={styles.checkbox}>
@@ -263,18 +263,18 @@ function RouteComponent() {
             aria-invalid={errors.consent}
             aria-describedby="consent-error"
           />
-          <p>
+          <span>
             <span>
               I consent to being contacted by the team{" "}
               <span aria-hidden>*</span>
             </span>
-          </p>
-          <p
+          </span>
+          <span
             id="consent-error"
             className={errors.consent ? styles.error : styles.hidden}
           >
             To submit this form, please consent to being contacted
-          </p>
+          </span>
         </label>
 
         <button
@@ -286,7 +286,7 @@ function RouteComponent() {
         </button>
       </form>
 
-      <article
+      <div
         role="alert"
         aria-live="assertive"
         className={toast ? styles.toast : styles.hidden}
@@ -294,7 +294,7 @@ function RouteComponent() {
         <h3>Message Sent!</h3>
 
         <p>Thanks for completing the form. We'll be in touch soon!</p>
-      </article>
+      </div>
     </main>
   )
 }

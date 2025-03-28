@@ -98,8 +98,6 @@
 
 .error {
   color: var(--red);
-  margin: 0;
-
   line-height: 1;
 }
 
@@ -124,7 +122,9 @@
 }
 
 .fieldset {
-  display: grid;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
 
   border: none;
   gap: 12px;
@@ -136,8 +136,10 @@
 }
 
 .fieldset > label {
+  flex: 1;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 
   border: solid 1px var(--grey-500);
   border-radius: 8px;
@@ -193,14 +195,13 @@
   line-height: 1.4;
 }
 
-.checkbox > p:first-of-type {
+.checkbox > span:first-of-type {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 0;
 }
 
-.checkbox > p:first-of-type::before {
+.checkbox > span:first-of-type::before {
   content: "";
   display: block;
 
@@ -209,11 +210,11 @@
   min-width: 16px;
 }
 
-.checkbox:focus-within > p:first-of-type::before {
+.checkbox:focus-within > span:first-of-type::before {
   outline: solid 2px var(--green-600);
 }
 
-.checkbox:has(input:checked) > p:first-of-type::before {
+.checkbox:has(input:checked) > span:first-of-type::before {
   background-image: url("../../assets/icons/icon-checkbox-check.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -221,8 +222,7 @@
   border: none;
 }
 
-.checkbox > p:last-child {
-  margin: 0;
+.checkbox > span:last-child {
   line-height: 1.5;
 }
 
@@ -294,16 +294,13 @@
     padding: 32px;
   }
 
-  .fieldset {
-    display: grid;
-    grid-column: span 2;
-    grid-template-columns: subgrid;
-
-    column-gap: 24px;
+  .fieldset > span {
+    flex-basis: 100%;
   }
 
   .form > h2,
   .input:nth-of-type(3),
+  .fieldset,
   .textarea,
   .checkbox,
   .button {
