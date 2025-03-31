@@ -16,6 +16,7 @@ import { Route as javaScriptFundamentalsTipCalculatorAppImport } from './routes/
 import { Route as javaScriptFundamentalsTimeTrackingDashboardImport } from './routes/(javaScript-fundamentals)/time-tracking-dashboard'
 import { Route as javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageImport } from './routes/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
 import { Route as javaScriptFundamentalsArticlePreviewComponentImport } from './routes/(javaScript-fundamentals)/article-preview-component'
+import { Route as introductionToWebAccessibilityNewsHomepageImport } from './routes/(introduction-to-web-accessibility)/news-homepage'
 import { Route as introductionToWebAccessibilityInteractiveRatingComponentImport } from './routes/(introduction-to-web-accessibility)/interactive-rating-component'
 import { Route as introductionToWebAccessibilityFaqAccordionImport } from './routes/(introduction-to-web-accessibility)/faq-accordion'
 import { Route as introductionToWebAccessibilityContactFormImport } from './routes/(introduction-to-web-accessibility)/contact-form'
@@ -60,6 +61,13 @@ const javaScriptFundamentalsArticlePreviewComponentRoute =
   javaScriptFundamentalsArticlePreviewComponentImport.update({
     id: '/(javaScript-fundamentals)/article-preview-component',
     path: '/article-preview-component',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const introductionToWebAccessibilityNewsHomepageRoute =
+  introductionToWebAccessibilityNewsHomepageImport.update({
+    id: '/(introduction-to-web-accessibility)/news-homepage',
+    path: '/news-homepage',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -213,6 +221,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof introductionToWebAccessibilityInteractiveRatingComponentImport
       parentRoute: typeof rootRoute
     }
+    '/(introduction-to-web-accessibility)/news-homepage': {
+      id: '/(introduction-to-web-accessibility)/news-homepage'
+      path: '/news-homepage'
+      fullPath: '/news-homepage'
+      preLoaderRoute: typeof introductionToWebAccessibilityNewsHomepageImport
+      parentRoute: typeof rootRoute
+    }
     '/(javaScript-fundamentals)/article-preview-component': {
       id: '/(javaScript-fundamentals)/article-preview-component'
       path: '/article-preview-component'
@@ -258,6 +273,7 @@ export interface FileRoutesByFullPath {
   '/contact-form': typeof introductionToWebAccessibilityContactFormRoute
   '/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
+  '/news-homepage': typeof introductionToWebAccessibilityNewsHomepageRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
@@ -276,6 +292,7 @@ export interface FileRoutesByTo {
   '/contact-form': typeof introductionToWebAccessibilityContactFormRoute
   '/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
+  '/news-homepage': typeof introductionToWebAccessibilityNewsHomepageRoute
   '/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
@@ -295,6 +312,7 @@ export interface FileRoutesById {
   '/(introduction-to-web-accessibility)/contact-form': typeof introductionToWebAccessibilityContactFormRoute
   '/(introduction-to-web-accessibility)/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/(introduction-to-web-accessibility)/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
+  '/(introduction-to-web-accessibility)/news-homepage': typeof introductionToWebAccessibilityNewsHomepageRoute
   '/(javaScript-fundamentals)/article-preview-component': typeof javaScriptFundamentalsArticlePreviewComponentRoute
   '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message': typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   '/(javaScript-fundamentals)/time-tracking-dashboard': typeof javaScriptFundamentalsTimeTrackingDashboardRoute
@@ -315,6 +333,7 @@ export interface FileRouteTypes {
     | '/contact-form'
     | '/faq-accordion'
     | '/interactive-rating-component'
+    | '/news-homepage'
     | '/article-preview-component'
     | '/newsletter-sign-up-form-with-success-message'
     | '/time-tracking-dashboard'
@@ -332,6 +351,7 @@ export interface FileRouteTypes {
     | '/contact-form'
     | '/faq-accordion'
     | '/interactive-rating-component'
+    | '/news-homepage'
     | '/article-preview-component'
     | '/newsletter-sign-up-form-with-success-message'
     | '/time-tracking-dashboard'
@@ -349,6 +369,7 @@ export interface FileRouteTypes {
     | '/(introduction-to-web-accessibility)/contact-form'
     | '/(introduction-to-web-accessibility)/faq-accordion'
     | '/(introduction-to-web-accessibility)/interactive-rating-component'
+    | '/(introduction-to-web-accessibility)/news-homepage'
     | '/(javaScript-fundamentals)/article-preview-component'
     | '/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message'
     | '/(javaScript-fundamentals)/time-tracking-dashboard'
@@ -368,6 +389,7 @@ export interface RootRouteChildren {
   introductionToWebAccessibilityContactFormRoute: typeof introductionToWebAccessibilityContactFormRoute
   introductionToWebAccessibilityFaqAccordionRoute: typeof introductionToWebAccessibilityFaqAccordionRoute
   introductionToWebAccessibilityInteractiveRatingComponentRoute: typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
+  introductionToWebAccessibilityNewsHomepageRoute: typeof introductionToWebAccessibilityNewsHomepageRoute
   javaScriptFundamentalsArticlePreviewComponentRoute: typeof javaScriptFundamentalsArticlePreviewComponentRoute
   javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute: typeof javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute
   javaScriptFundamentalsTimeTrackingDashboardRoute: typeof javaScriptFundamentalsTimeTrackingDashboardRoute
@@ -392,6 +414,8 @@ const rootRouteChildren: RootRouteChildren = {
     introductionToWebAccessibilityFaqAccordionRoute,
   introductionToWebAccessibilityInteractiveRatingComponentRoute:
     introductionToWebAccessibilityInteractiveRatingComponentRoute,
+  introductionToWebAccessibilityNewsHomepageRoute:
+    introductionToWebAccessibilityNewsHomepageRoute,
   javaScriptFundamentalsArticlePreviewComponentRoute:
     javaScriptFundamentalsArticlePreviewComponentRoute,
   javaScriptFundamentalsNewsletterSignUpFormWithSuccessMessageRoute:
@@ -423,6 +447,7 @@ export const routeTree = rootRoute
         "/(introduction-to-web-accessibility)/contact-form",
         "/(introduction-to-web-accessibility)/faq-accordion",
         "/(introduction-to-web-accessibility)/interactive-rating-component",
+        "/(introduction-to-web-accessibility)/news-homepage",
         "/(javaScript-fundamentals)/article-preview-component",
         "/(javaScript-fundamentals)/newsletter-sign-up-form-with-success-message",
         "/(javaScript-fundamentals)/time-tracking-dashboard",
@@ -461,6 +486,9 @@ export const routeTree = rootRoute
     },
     "/(introduction-to-web-accessibility)/interactive-rating-component": {
       "filePath": "(introduction-to-web-accessibility)/interactive-rating-component.tsx"
+    },
+    "/(introduction-to-web-accessibility)/news-homepage": {
+      "filePath": "(introduction-to-web-accessibility)/news-homepage.tsx"
     },
     "/(javaScript-fundamentals)/article-preview-component": {
       "filePath": "(javaScript-fundamentals)/article-preview-component.tsx"

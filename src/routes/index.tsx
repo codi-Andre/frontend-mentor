@@ -92,6 +92,10 @@ function Index() {
         <li>
           <Link to="/contact-form">Contact form</Link>
         </li>
+
+        <li>
+          <Link to="/news-homepage">News homepage</Link>
+        </li>
       </ol>
     </div>
   )
