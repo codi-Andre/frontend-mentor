@@ -19,6 +19,7 @@ import { Route as javaScriptFundamentalsArticlePreviewComponentImport } from './
 import { Route as introductionToWebAccessibilityNewsHomepageImport } from './routes/(introduction-to-web-accessibility)/news-homepage'
 import { Route as introductionToWebAccessibilityInteractiveRatingComponentImport } from './routes/(introduction-to-web-accessibility)/interactive-rating-component'
 import { Route as introductionToWebAccessibilityFaqAccordionImport } from './routes/(introduction-to-web-accessibility)/faq-accordion'
+import { Route as introductionToWebAccessibilityECommerceProductPageImport } from './routes/(introduction-to-web-accessibility)/e-commerce-product-page'
 import { Route as introductionToWebAccessibilityContactFormImport } from './routes/(introduction-to-web-accessibility)/contact-form'
 import { Route as gettingStartedSocialLinksProfileImport } from './routes/(getting-started)/social-links-profile'
 import { Route as gettingStartedRecipePageImport } from './routes/(getting-started)/recipe-page'
@@ -82,6 +83,13 @@ const introductionToWebAccessibilityFaqAccordionRoute =
   introductionToWebAccessibilityFaqAccordionImport.update({
     id: '/(introduction-to-web-accessibility)/faq-accordion',
     path: '/faq-accordion',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const introductionToWebAccessibilityECommerceProductPageRoute =
+  introductionToWebAccessibilityECommerceProductPageImport.update({
+    id: '/(introduction-to-web-accessibility)/e-commerce-product-page',
+    path: '/e-commerce-product-page',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -207,6 +215,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof introductionToWebAccessibilityContactFormImport
       parentRoute: typeof rootRoute
     }
+    '/(introduction-to-web-accessibility)/e-commerce-product-page': {
+      id: '/(introduction-to-web-accessibility)/e-commerce-product-page'
+      path: '/e-commerce-product-page'
+      fullPath: '/e-commerce-product-page'
+      preLoaderRoute: typeof introductionToWebAccessibilityECommerceProductPageImport
+      parentRoute: typeof rootRoute
+    }
     '/(introduction-to-web-accessibility)/faq-accordion': {
       id: '/(introduction-to-web-accessibility)/faq-accordion'
       path: '/faq-accordion'
@@ -271,6 +286,7 @@ export interface FileRoutesByFullPath {
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/contact-form': typeof introductionToWebAccessibilityContactFormRoute
+  '/e-commerce-product-page': typeof introductionToWebAccessibilityECommerceProductPageRoute
   '/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/news-homepage': typeof introductionToWebAccessibilityNewsHomepageRoute
@@ -290,6 +306,7 @@ export interface FileRoutesByTo {
   '/recipe-page': typeof gettingStartedRecipePageRoute
   '/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/contact-form': typeof introductionToWebAccessibilityContactFormRoute
+  '/e-commerce-product-page': typeof introductionToWebAccessibilityECommerceProductPageRoute
   '/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/news-homepage': typeof introductionToWebAccessibilityNewsHomepageRoute
@@ -310,6 +327,7 @@ export interface FileRoutesById {
   '/(getting-started)/recipe-page': typeof gettingStartedRecipePageRoute
   '/(getting-started)/social-links-profile': typeof gettingStartedSocialLinksProfileRoute
   '/(introduction-to-web-accessibility)/contact-form': typeof introductionToWebAccessibilityContactFormRoute
+  '/(introduction-to-web-accessibility)/e-commerce-product-page': typeof introductionToWebAccessibilityECommerceProductPageRoute
   '/(introduction-to-web-accessibility)/faq-accordion': typeof introductionToWebAccessibilityFaqAccordionRoute
   '/(introduction-to-web-accessibility)/interactive-rating-component': typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   '/(introduction-to-web-accessibility)/news-homepage': typeof introductionToWebAccessibilityNewsHomepageRoute
@@ -331,6 +349,7 @@ export interface FileRouteTypes {
     | '/recipe-page'
     | '/social-links-profile'
     | '/contact-form'
+    | '/e-commerce-product-page'
     | '/faq-accordion'
     | '/interactive-rating-component'
     | '/news-homepage'
@@ -349,6 +368,7 @@ export interface FileRouteTypes {
     | '/recipe-page'
     | '/social-links-profile'
     | '/contact-form'
+    | '/e-commerce-product-page'
     | '/faq-accordion'
     | '/interactive-rating-component'
     | '/news-homepage'
@@ -367,6 +387,7 @@ export interface FileRouteTypes {
     | '/(getting-started)/recipe-page'
     | '/(getting-started)/social-links-profile'
     | '/(introduction-to-web-accessibility)/contact-form'
+    | '/(introduction-to-web-accessibility)/e-commerce-product-page'
     | '/(introduction-to-web-accessibility)/faq-accordion'
     | '/(introduction-to-web-accessibility)/interactive-rating-component'
     | '/(introduction-to-web-accessibility)/news-homepage'
@@ -387,6 +408,7 @@ export interface RootRouteChildren {
   gettingStartedRecipePageRoute: typeof gettingStartedRecipePageRoute
   gettingStartedSocialLinksProfileRoute: typeof gettingStartedSocialLinksProfileRoute
   introductionToWebAccessibilityContactFormRoute: typeof introductionToWebAccessibilityContactFormRoute
+  introductionToWebAccessibilityECommerceProductPageRoute: typeof introductionToWebAccessibilityECommerceProductPageRoute
   introductionToWebAccessibilityFaqAccordionRoute: typeof introductionToWebAccessibilityFaqAccordionRoute
   introductionToWebAccessibilityInteractiveRatingComponentRoute: typeof introductionToWebAccessibilityInteractiveRatingComponentRoute
   introductionToWebAccessibilityNewsHomepageRoute: typeof introductionToWebAccessibilityNewsHomepageRoute
@@ -410,6 +432,8 @@ const rootRouteChildren: RootRouteChildren = {
   gettingStartedSocialLinksProfileRoute: gettingStartedSocialLinksProfileRoute,
   introductionToWebAccessibilityContactFormRoute:
     introductionToWebAccessibilityContactFormRoute,
+  introductionToWebAccessibilityECommerceProductPageRoute:
+    introductionToWebAccessibilityECommerceProductPageRoute,
   introductionToWebAccessibilityFaqAccordionRoute:
     introductionToWebAccessibilityFaqAccordionRoute,
   introductionToWebAccessibilityInteractiveRatingComponentRoute:
@@ -445,6 +469,7 @@ export const routeTree = rootRoute
         "/(getting-started)/recipe-page",
         "/(getting-started)/social-links-profile",
         "/(introduction-to-web-accessibility)/contact-form",
+        "/(introduction-to-web-accessibility)/e-commerce-product-page",
         "/(introduction-to-web-accessibility)/faq-accordion",
         "/(introduction-to-web-accessibility)/interactive-rating-component",
         "/(introduction-to-web-accessibility)/news-homepage",
@@ -480,6 +505,9 @@ export const routeTree = rootRoute
     },
     "/(introduction-to-web-accessibility)/contact-form": {
       "filePath": "(introduction-to-web-accessibility)/contact-form.tsx"
+    },
+    "/(introduction-to-web-accessibility)/e-commerce-product-page": {
+      "filePath": "(introduction-to-web-accessibility)/e-commerce-product-page.tsx"
     },
     "/(introduction-to-web-accessibility)/faq-accordion": {
       "filePath": "(introduction-to-web-accessibility)/faq-accordion.tsx"

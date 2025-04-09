@@ -96,6 +96,10 @@ function Index() {
         <li>
           <Link to="/news-homepage">News homepage</Link>
         </li>
+
+        <li>
+          <Link to="/e-commerce-product-page">E-commerce product page</Link>
+        </li>
       </ol>
     </div>
   )
