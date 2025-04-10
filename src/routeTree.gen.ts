@@ -28,6 +28,7 @@ import { Route as gettingStartedBlogPreviewCardImport } from './routes/(getting-
 import { Route as buildingResponsiveLayoutsTestimonialsGridSectionImport } from './routes/(building-responsive-layouts)/testimonials-grid-section'
 import { Route as buildingResponsiveLayoutsProductPreviewCardImport } from './routes/(building-responsive-layouts)/product-preview-card'
 import { Route as buildingResponsiveLayoutsFourCardFeatureSectionImport } from './routes/(building-responsive-layouts)/four-card-feature-section'
+import { Route as advancedCssTechniquesNftPreviewCardImport } from './routes/(advanced-css-techniques)/nft-preview-card'
 
 // Create/Update Routes
 
@@ -148,6 +149,13 @@ const buildingResponsiveLayoutsFourCardFeatureSectionRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const advancedCssTechniquesNftPreviewCardRoute =
+  advancedCssTechniquesNftPreviewCardImport.update({
+    id: '/(advanced-css-techniques)/nft-preview-card',
+    path: '/nft-preview-card',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -157,6 +165,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/(advanced-css-techniques)/nft-preview-card': {
+      id: '/(advanced-css-techniques)/nft-preview-card'
+      path: '/nft-preview-card'
+      fullPath: '/nft-preview-card'
+      preLoaderRoute: typeof advancedCssTechniquesNftPreviewCardImport
       parentRoute: typeof rootRoute
     }
     '/(building-responsive-layouts)/four-card-feature-section': {
@@ -278,6 +293,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
   '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
@@ -298,6 +314,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
   '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
@@ -319,6 +336,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/(advanced-css-techniques)/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
   '/(building-responsive-layouts)/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/(building-responsive-layouts)/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/(building-responsive-layouts)/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
@@ -341,6 +359,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/nft-preview-card'
     | '/four-card-feature-section'
     | '/product-preview-card'
     | '/testimonials-grid-section'
@@ -360,6 +379,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/nft-preview-card'
     | '/four-card-feature-section'
     | '/product-preview-card'
     | '/testimonials-grid-section'
@@ -379,6 +399,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/(advanced-css-techniques)/nft-preview-card'
     | '/(building-responsive-layouts)/four-card-feature-section'
     | '/(building-responsive-layouts)/product-preview-card'
     | '/(building-responsive-layouts)/testimonials-grid-section'
@@ -400,6 +421,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  advancedCssTechniquesNftPreviewCardRoute: typeof advancedCssTechniquesNftPreviewCardRoute
   buildingResponsiveLayoutsFourCardFeatureSectionRoute: typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   buildingResponsiveLayoutsProductPreviewCardRoute: typeof buildingResponsiveLayoutsProductPreviewCardRoute
   buildingResponsiveLayoutsTestimonialsGridSectionRoute: typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
@@ -420,6 +442,8 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  advancedCssTechniquesNftPreviewCardRoute:
+    advancedCssTechniquesNftPreviewCardRoute,
   buildingResponsiveLayoutsFourCardFeatureSectionRoute:
     buildingResponsiveLayoutsFourCardFeatureSectionRoute,
   buildingResponsiveLayoutsProductPreviewCardRoute:
@@ -461,6 +485,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/(advanced-css-techniques)/nft-preview-card",
         "/(building-responsive-layouts)/four-card-feature-section",
         "/(building-responsive-layouts)/product-preview-card",
         "/(building-responsive-layouts)/testimonials-grid-section",
@@ -481,6 +506,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/(advanced-css-techniques)/nft-preview-card": {
+      "filePath": "(advanced-css-techniques)/nft-preview-card.tsx"
     },
     "/(building-responsive-layouts)/four-card-feature-section": {
       "filePath": "(building-responsive-layouts)/four-card-feature-section.tsx"

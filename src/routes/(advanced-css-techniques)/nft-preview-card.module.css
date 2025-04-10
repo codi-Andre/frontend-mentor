@@ -1,0 +1,148 @@
+@font-face {
+  font-display: swap;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../assets/fonts/outfit-v11-latin-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/outfit-v11-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/outfit-v11-latin-600.woff2") format("woff2");
+}
+
+.container {
+  --cyan: hsl(178, 100%, 50%);
+  --blue-400: hsl(210, 55%, 74%);
+  --blue-600: hsl(215, 52%, 70%);
+  --blue-700: hsl(215, 32%, 27%);
+  --blue-800: hsl(216, 50%, 16%);
+  --blue-900: hsl(217, 54%, 11%);
+  --white: hsl(0, 0%, 100%);
+
+  background-color: var(--blue-900);
+  color: var(--blue-400);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  min-width: 320px;
+  padding: 24px;
+
+  font-family: "Outfit";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.card {
+  background-color: var(--blue-800);
+  border-radius: 12px;
+  padding: 24px;
+  margin-inline: auto;
+  max-width: 340px;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  background-color: var(--cyan);
+  overflow: hidden;
+  position: relative;
+
+  border-radius: 8px;
+}
+
+.image:hover .image__background {
+  opacity: 0.5;
+}
+.image:hover .image__foreground {
+  opacity: 1;
+}
+
+.image__background {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: middle;
+}
+
+.image__foreground {
+  position: absolute;
+  inset: 0;
+
+  object-fit: scale-down;
+  opacity: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.card__title {
+  margin-block: 16px;
+}
+
+.card__title > a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.card__title > a:hover {
+  color: var(--cyan);
+}
+
+.crypto {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crypto__price {
+  color: var(--cyan);
+}
+
+.crypto__time {
+  margin-left: auto;
+}
+
+.card__line {
+  background-color: var(--blue-400);
+  border: none;
+  height: 1px;
+  margin-block: 16px;
+  opacity: 0.3;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.profile__avatar {
+  border: solid 1px var(--white);
+  border-radius: 9999px;
+  margin-right: 12px;
+}
+
+.profile__autor {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.profile__autor:hover {
+  color: var(--cyan);
+}

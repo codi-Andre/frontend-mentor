@@ -101,6 +101,14 @@ function Index() {
           <Link to="/e-commerce-product-page">E-commerce product page</Link>
         </li>
       </ol>
+
+      <h2>Advanced CSS techniques</h2>
+
+      <ol>
+        <li>
+          <Link to="/nft-preview-card">NFT preview card</Link>
+        </li>
+      </ol>
     </div>
   )
 }
