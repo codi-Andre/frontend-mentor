@@ -29,6 +29,7 @@ import { Route as buildingResponsiveLayoutsTestimonialsGridSectionImport } from 
 import { Route as buildingResponsiveLayoutsProductPreviewCardImport } from './routes/(building-responsive-layouts)/product-preview-card'
 import { Route as buildingResponsiveLayoutsFourCardFeatureSectionImport } from './routes/(building-responsive-layouts)/four-card-feature-section'
 import { Route as advancedCssTechniquesNftPreviewCardImport } from './routes/(advanced-css-techniques)/nft-preview-card'
+import { Route as advancedCssTechniquesLoopstudiosLandingPageImport } from './routes/(advanced-css-techniques)/loopstudios-landing-page'
 
 // Create/Update Routes
 
@@ -156,6 +157,13 @@ const advancedCssTechniquesNftPreviewCardRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const advancedCssTechniquesLoopstudiosLandingPageRoute =
+  advancedCssTechniquesLoopstudiosLandingPageImport.update({
+    id: '/(advanced-css-techniques)/loopstudios-landing-page',
+    path: '/loopstudios-landing-page',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -165,6 +173,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/(advanced-css-techniques)/loopstudios-landing-page': {
+      id: '/(advanced-css-techniques)/loopstudios-landing-page'
+      path: '/loopstudios-landing-page'
+      fullPath: '/loopstudios-landing-page'
+      preLoaderRoute: typeof advancedCssTechniquesLoopstudiosLandingPageImport
       parentRoute: typeof rootRoute
     }
     '/(advanced-css-techniques)/nft-preview-card': {
@@ -293,6 +308,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/loopstudios-landing-page': typeof advancedCssTechniquesLoopstudiosLandingPageRoute
   '/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
   '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
@@ -314,6 +330,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/loopstudios-landing-page': typeof advancedCssTechniquesLoopstudiosLandingPageRoute
   '/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
   '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
@@ -336,6 +353,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/(advanced-css-techniques)/loopstudios-landing-page': typeof advancedCssTechniquesLoopstudiosLandingPageRoute
   '/(advanced-css-techniques)/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
   '/(building-responsive-layouts)/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/(building-responsive-layouts)/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
@@ -359,6 +377,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/loopstudios-landing-page'
     | '/nft-preview-card'
     | '/four-card-feature-section'
     | '/product-preview-card'
@@ -379,6 +398,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/loopstudios-landing-page'
     | '/nft-preview-card'
     | '/four-card-feature-section'
     | '/product-preview-card'
@@ -399,6 +419,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/(advanced-css-techniques)/loopstudios-landing-page'
     | '/(advanced-css-techniques)/nft-preview-card'
     | '/(building-responsive-layouts)/four-card-feature-section'
     | '/(building-responsive-layouts)/product-preview-card'
@@ -421,6 +442,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  advancedCssTechniquesLoopstudiosLandingPageRoute: typeof advancedCssTechniquesLoopstudiosLandingPageRoute
   advancedCssTechniquesNftPreviewCardRoute: typeof advancedCssTechniquesNftPreviewCardRoute
   buildingResponsiveLayoutsFourCardFeatureSectionRoute: typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   buildingResponsiveLayoutsProductPreviewCardRoute: typeof buildingResponsiveLayoutsProductPreviewCardRoute
@@ -442,6 +464,8 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  advancedCssTechniquesLoopstudiosLandingPageRoute:
+    advancedCssTechniquesLoopstudiosLandingPageRoute,
   advancedCssTechniquesNftPreviewCardRoute:
     advancedCssTechniquesNftPreviewCardRoute,
   buildingResponsiveLayoutsFourCardFeatureSectionRoute:
@@ -485,6 +509,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/(advanced-css-techniques)/loopstudios-landing-page",
         "/(advanced-css-techniques)/nft-preview-card",
         "/(building-responsive-layouts)/four-card-feature-section",
         "/(building-responsive-layouts)/product-preview-card",
@@ -506,6 +531,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/(advanced-css-techniques)/loopstudios-landing-page": {
+      "filePath": "(advanced-css-techniques)/loopstudios-landing-page.tsx"
     },
     "/(advanced-css-techniques)/nft-preview-card": {
       "filePath": "(advanced-css-techniques)/nft-preview-card.tsx"

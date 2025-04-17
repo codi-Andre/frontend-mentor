@@ -108,6 +108,10 @@ function Index() {
         <li>
           <Link to="/nft-preview-card">NFT preview card</Link>
         </li>
+
+        <li>
+          <Link to="/loopstudios-landing-page">Loopstudios landing page</Link>
+        </li>
       </ol>
     </div>
   )
