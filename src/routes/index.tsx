@@ -112,6 +112,10 @@ function Index() {
         <li>
           <Link to="/loopstudios-landing-page">Loopstudios landing page</Link>
         </li>
+
+        <li>
+          <Link to="/room-homepage">Room homepage</Link>
+        </li>
       </ol>
     </div>
   )

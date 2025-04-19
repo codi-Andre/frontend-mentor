@@ -28,6 +28,7 @@ import { Route as gettingStartedBlogPreviewCardImport } from './routes/(getting-
 import { Route as buildingResponsiveLayoutsTestimonialsGridSectionImport } from './routes/(building-responsive-layouts)/testimonials-grid-section'
 import { Route as buildingResponsiveLayoutsProductPreviewCardImport } from './routes/(building-responsive-layouts)/product-preview-card'
 import { Route as buildingResponsiveLayoutsFourCardFeatureSectionImport } from './routes/(building-responsive-layouts)/four-card-feature-section'
+import { Route as advancedCssTechniquesRoomHomepageImport } from './routes/(advanced-css-techniques)/room-homepage'
 import { Route as advancedCssTechniquesNftPreviewCardImport } from './routes/(advanced-css-techniques)/nft-preview-card'
 import { Route as advancedCssTechniquesLoopstudiosLandingPageImport } from './routes/(advanced-css-techniques)/loopstudios-landing-page'
 
@@ -150,6 +151,13 @@ const buildingResponsiveLayoutsFourCardFeatureSectionRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const advancedCssTechniquesRoomHomepageRoute =
+  advancedCssTechniquesRoomHomepageImport.update({
+    id: '/(advanced-css-techniques)/room-homepage',
+    path: '/room-homepage',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 const advancedCssTechniquesNftPreviewCardRoute =
   advancedCssTechniquesNftPreviewCardImport.update({
     id: '/(advanced-css-techniques)/nft-preview-card',
@@ -187,6 +195,13 @@ declare module '@tanstack/react-router' {
       path: '/nft-preview-card'
       fullPath: '/nft-preview-card'
       preLoaderRoute: typeof advancedCssTechniquesNftPreviewCardImport
+      parentRoute: typeof rootRoute
+    }
+    '/(advanced-css-techniques)/room-homepage': {
+      id: '/(advanced-css-techniques)/room-homepage'
+      path: '/room-homepage'
+      fullPath: '/room-homepage'
+      preLoaderRoute: typeof advancedCssTechniquesRoomHomepageImport
       parentRoute: typeof rootRoute
     }
     '/(building-responsive-layouts)/four-card-feature-section': {
@@ -310,6 +325,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/loopstudios-landing-page': typeof advancedCssTechniquesLoopstudiosLandingPageRoute
   '/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
+  '/room-homepage': typeof advancedCssTechniquesRoomHomepageRoute
   '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
@@ -332,6 +348,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/loopstudios-landing-page': typeof advancedCssTechniquesLoopstudiosLandingPageRoute
   '/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
+  '/room-homepage': typeof advancedCssTechniquesRoomHomepageRoute
   '/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
@@ -355,6 +372,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/(advanced-css-techniques)/loopstudios-landing-page': typeof advancedCssTechniquesLoopstudiosLandingPageRoute
   '/(advanced-css-techniques)/nft-preview-card': typeof advancedCssTechniquesNftPreviewCardRoute
+  '/(advanced-css-techniques)/room-homepage': typeof advancedCssTechniquesRoomHomepageRoute
   '/(building-responsive-layouts)/four-card-feature-section': typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   '/(building-responsive-layouts)/product-preview-card': typeof buildingResponsiveLayoutsProductPreviewCardRoute
   '/(building-responsive-layouts)/testimonials-grid-section': typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
@@ -379,6 +397,7 @@ export interface FileRouteTypes {
     | '/'
     | '/loopstudios-landing-page'
     | '/nft-preview-card'
+    | '/room-homepage'
     | '/four-card-feature-section'
     | '/product-preview-card'
     | '/testimonials-grid-section'
@@ -400,6 +419,7 @@ export interface FileRouteTypes {
     | '/'
     | '/loopstudios-landing-page'
     | '/nft-preview-card'
+    | '/room-homepage'
     | '/four-card-feature-section'
     | '/product-preview-card'
     | '/testimonials-grid-section'
@@ -421,6 +441,7 @@ export interface FileRouteTypes {
     | '/'
     | '/(advanced-css-techniques)/loopstudios-landing-page'
     | '/(advanced-css-techniques)/nft-preview-card'
+    | '/(advanced-css-techniques)/room-homepage'
     | '/(building-responsive-layouts)/four-card-feature-section'
     | '/(building-responsive-layouts)/product-preview-card'
     | '/(building-responsive-layouts)/testimonials-grid-section'
@@ -444,6 +465,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   advancedCssTechniquesLoopstudiosLandingPageRoute: typeof advancedCssTechniquesLoopstudiosLandingPageRoute
   advancedCssTechniquesNftPreviewCardRoute: typeof advancedCssTechniquesNftPreviewCardRoute
+  advancedCssTechniquesRoomHomepageRoute: typeof advancedCssTechniquesRoomHomepageRoute
   buildingResponsiveLayoutsFourCardFeatureSectionRoute: typeof buildingResponsiveLayoutsFourCardFeatureSectionRoute
   buildingResponsiveLayoutsProductPreviewCardRoute: typeof buildingResponsiveLayoutsProductPreviewCardRoute
   buildingResponsiveLayoutsTestimonialsGridSectionRoute: typeof buildingResponsiveLayoutsTestimonialsGridSectionRoute
@@ -468,6 +490,8 @@ const rootRouteChildren: RootRouteChildren = {
     advancedCssTechniquesLoopstudiosLandingPageRoute,
   advancedCssTechniquesNftPreviewCardRoute:
     advancedCssTechniquesNftPreviewCardRoute,
+  advancedCssTechniquesRoomHomepageRoute:
+    advancedCssTechniquesRoomHomepageRoute,
   buildingResponsiveLayoutsFourCardFeatureSectionRoute:
     buildingResponsiveLayoutsFourCardFeatureSectionRoute,
   buildingResponsiveLayoutsProductPreviewCardRoute:
@@ -511,6 +535,7 @@ export const routeTree = rootRoute
         "/",
         "/(advanced-css-techniques)/loopstudios-landing-page",
         "/(advanced-css-techniques)/nft-preview-card",
+        "/(advanced-css-techniques)/room-homepage",
         "/(building-responsive-layouts)/four-card-feature-section",
         "/(building-responsive-layouts)/product-preview-card",
         "/(building-responsive-layouts)/testimonials-grid-section",
@@ -537,6 +562,9 @@ export const routeTree = rootRoute
     },
     "/(advanced-css-techniques)/nft-preview-card": {
       "filePath": "(advanced-css-techniques)/nft-preview-card.tsx"
+    },
+    "/(advanced-css-techniques)/room-homepage": {
+      "filePath": "(advanced-css-techniques)/room-homepage.tsx"
     },
     "/(building-responsive-layouts)/four-card-feature-section": {
       "filePath": "(building-responsive-layouts)/four-card-feature-section.tsx"

@@ -1,0 +1,145 @@
+@font-face {
+  font-display: swap;
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/league-spartan-v11-latin-500.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/league-spartan-v11-latin-600.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/league-spartan-v11-latin-700.woff2")
+    format("woff2");
+}
+
+.container {
+  --gray-700: hsl(0, 0%, 63%);
+  --gray-900: hsl(0, 0%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+
+  background-color: var(--white);
+  color: var(--gray-900);
+
+  min-height: 100vh;
+  min-width: 320px;
+
+  font-family: "League Spartan";
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+
+  width: 100%;
+
+  position: absolute;
+  left: 12px;
+  top: 32px;
+}
+
+.header__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+
+  border: none;
+  padding: 12px;
+
+  position: absolute;
+  left: 0;
+  top: -12px;
+}
+
+.dialog:popover-open {
+  border: none;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.mobile-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  padding-inline: 12px;
+  width: 100vw;
+}
+
+.mobile-nav__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+
+  border: none;
+  padding: 12px;
+}
+
+.mobile-nav__list {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+  padding: 0;
+}
+
+.mobile-nav__link {
+  color: var(--black);
+  text-decoration: none;
+  text-transform: lowercase;
+
+  padding: 16px;
+}
+
+.slide__image {
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.logo {
+  margin-inline: auto;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+body:has(.dialog:popover-open) {
+  overflow-y: hidden;
+}
+
+.dialog::backdrop {
+  background-color: color-mix(
+    in hsl shorter hue,
+    transparent,
+    var(--black) 60%
+  );
+}
