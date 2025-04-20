@@ -174,14 +174,18 @@ function RouteComponent() {
             </button>
           </div>
 
-          <h2 className={styles["hero__title"]}>{slides[slide].title}</h2>
+          <div className={styles["hero__content"]}>
+            <h2 className={styles["hero__title"]}>{slides[slide].title}</h2>
 
-          <p className={styles["hero__paragraph"]}>{slides[slide].paragraph}</p>
+            <p className={styles["hero__paragraph"]}>
+              {slides[slide].paragraph}
+            </p>
 
-          <a className={styles["hero__link"]} href="#/room-homepage">
-            Shop now
-            <img height={12} width={40} src={arrowIcon} alt="" aria-hidden />
-          </a>
+            <a className={styles["hero__link"]} href="#/room-homepage">
+              Shop now
+              <img height={12} width={40} src={arrowIcon} alt="" aria-hidden />
+            </a>
+          </div>
         </section>
 
         <section className={styles.about}>
